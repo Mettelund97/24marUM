@@ -46,7 +46,7 @@ jobs:
           # Your deployment steps here
 
       - name: Mark deployment in New Relic
-        uses: newrelic/deployment-marker-action@v1
+        uses: newrelic/deployment-marker-action@v2.3.0
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
@@ -73,7 +73,7 @@ jobs:
           # Your production deployment steps here
 
       - name: Mark deployment in New Relic
-        uses: newrelic/deployment-marker-action@v1
+        uses: newrelic/deployment-marker-action@v2.3.0
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
