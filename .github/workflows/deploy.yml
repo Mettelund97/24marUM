@@ -13,8 +13,8 @@ jobs:
         id: performance-check
         uses: newrelic/deployment-marker-action@v2.3.0
         with:
-          account_id: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
-          api_key: ${{ secrets.NEW_RELIC_API_KEY }}
+          accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+          apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           query: "SELECT average(duration) FROM Transaction WHERE appName = 'Express APM Demo' SINCE 1 hour ago"
           threshold: "300"
           operator: "below"
@@ -50,7 +50,7 @@ jobs:
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
-          applicationId: 'Express APM Demo'
+          applicationId: Express APM Demo
           revision: ${{ github.sha }}
           user: ${{ github.actor }}
           description: 'Deployed to staging'
@@ -77,7 +77,7 @@ jobs:
         with:
           apiKey: ${{ secrets.NEW_RELIC_API_KEY }}
           accountId: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
-          applicationId: 'Express APM Demo'
+          applicationId: Express APM Demo
           revision: ${{ github.sha }}
           user: ${{ github.actor }}
           description: 'Deployed to production'
